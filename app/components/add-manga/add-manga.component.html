@@ -1,0 +1,7 @@
+<input #newManga
+  (keyup.enter)="addManga(newManga.value)"
+  (blur)="addManga(newManga.value); newManga.value='' ">
+
+<button (click)=addManga(newManga.value)>Add</button>
+
+<ul><li *ngFor="let m of newMangaList">{{m}}</li></ul>

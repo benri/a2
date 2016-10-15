@@ -1,0 +1,18 @@
+<p>Manga List</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Latest Chapter</th>
+      <th>Current Chapter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of mangaList">
+      <td>{{m.name}}</td>
+      <td>{{m.latestChapter}}</td>
+      <td>{{m.currentChapter}}</td>
+    </tr>
+  </tbody>
+</table>
