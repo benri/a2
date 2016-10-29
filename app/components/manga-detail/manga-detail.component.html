@@ -1,0 +1,11 @@
+<div *ngIf="manga">
+  <h2>{{ manga.name }}</h2>
+  <div>
+    <label>id: </label>{{ manga.id }}
+  </div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="manga.name" placeholder="name">
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

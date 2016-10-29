@@ -8,10 +8,7 @@
       constructor: [app.LoggerService, function(logger) {
         this.logger = logger;
 
-        this.mangaList = [
-          new app.Manga(0, 'one piece'),
-          new app.Manga(1, 'orange')
-        ]
+        this.title = "My Manga Keeper";
       }]
     });
 })(window.app || (window.app = {}));

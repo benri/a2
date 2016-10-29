@@ -1,11 +1,17 @@
 (function(app) {
   app.AppModule =
     ng.core.NgModule({
-      imports: [ ng.platformBrowser.BrowserModule ],
+      imports: [
+        ng.platformBrowser.BrowserModule,
+        ng.forms.FormsModule,
+        app.AppRoutingModule
+      ],
       declarations: [
         app.AppComponent,
+        app.DashboardComponent,
         app.MangaListComponent,
-        app.MangaFormComponent
+        app.MangaFormComponent,
+        app.MangaDetailComponent
       ],
       providers: [
         app.LoggerService,

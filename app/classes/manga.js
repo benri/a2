@@ -5,7 +5,7 @@
         this.id = id;
         this.name = name;
         this.latestChapter = 1;
-        this.currentChapter = 1;
+        this.bookmark = 1;
       }]
     });
 })(window.app || (window.app = {}));

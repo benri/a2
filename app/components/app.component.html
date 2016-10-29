@@ -1,3 +1,6 @@
-<h1>My Manga Keeper</h1>
-
-<manga-list></manga-list>
+<h1>{{ title }}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/manga-list">Manga List</a>
+</nav>
+<router-outlet></router-outlet>

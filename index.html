@@ -1,9 +1,12 @@
 <!doctype html>
 <html>
   <head>
-    <title>Angular 2 QuickStart JS</title>
+    <base href="/">
+    <title>Manga Keeper</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forms.css">
 
     <!-- 1. Load libraries -->
     <!-- IE required polyfill -->
@@ -12,21 +15,28 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
 
-    <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/@angular/core/bundles/core.umd.js"></script>
     <script src="node_modules/@angular/common/bundles/common.umd.js"></script>
     <script src="node_modules/@angular/compiler/bundles/compiler.umd.js"></script>
     <script src="node_modules/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
     <script src="node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
+    <script src="node_modules/@angular/forms/bundles/forms.umd.js"></script>
+    <script src="node_modules/@angular/router/bundles/router.umd.js"></script>
 
     <!-- 2. Load our 'modules' -->
     <script src='app/classes/manga.js'></script>
     <script src='app/services/logger.service.js'></script>
     <script src='app/services/manga.service.js'></script>
     <!-- <script src="app/components/add-manga/add-manga.component.js"></script> -->
+    <script src="app/components/manga-detail/manga-detail.component.js"></script>
     <script src='app/components/manga-form/manga-form.component.js'></script>
     <script src='app/components/manga-list/manga-list.component.js'></script>
+    <script src='app/components/dashboard/dashboard.component.js'></script>
     <script src='app/components/app.component.js'></script>
+    <script src='app/app-routing.module.js'></script>
     <script src='app/app.module.js'></script>
     <script src='app/main.js'></script>
 

@@ -6,10 +6,12 @@
     })
     .Class({
       constructor: [app.MangaService, function(mangaService) {
-        this.mangaList = [
-          new app.Manga(0, 'one piece'),
-          new app.Manga(1, 'orange')
-        ]
-      }]
+        this.mangaService = mangaService;
+      }],
+      ngOnInit: function () {
+        this.mangaService.getMangaList().then((mangaList) => {
+          this.mangaList = mangaList;
+        });
+      }
     });
 })(window.app || (window.app = {}));

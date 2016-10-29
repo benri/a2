@@ -1,0 +1,11 @@
+<h3>Dashboard</h3>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let manga of mangaList" (click)="goToDetail(manga)" class="col-lg-12">
+      <div class="">
+        <h4>{{manga.name}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
