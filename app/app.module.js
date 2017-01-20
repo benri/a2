@@ -5,6 +5,7 @@
         ng.platformBrowser.BrowserModule,
         ng.forms.FormsModule,
         ng.http.HttpModule,
+        // rxjs.Observable,
         app.AppRoutingModule
       ],
       declarations: [
