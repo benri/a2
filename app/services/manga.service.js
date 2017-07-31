@@ -1,32 +1,25 @@
 (function (app) {
   app.MangaService =
     ng.core.Class({
-      constructor: [app.LoggerService, ng.http.HttpModule, function(logger, http) {
-        console.log(http);
-        this.http = http;
-
-        this.mangaUrl = 'api/manga';
-
-        this.mangaList = [
-          new app.Manga(0, 'one piece'),
-          new app.Manga(1, 'orange')
-        ];
-
-        this.logger = logger;
-      }],
+      constructor: [app.LoggerService, ng.http.Http,
+        function MangaService(logger, http) {
+          this.logger = logger;
+          this.http = http;
+          this.mangaUrl = 'api/manga';
+        }],
       getMangaList: function () {
-        console.log(this.http);
         return this.http.get(this.mangaUrl)
-          // .map(function (res) {
-          //   var body = res.json();
-          //   return body.data || {};
-          // })
-          // .catch(function (err) {
-          //   if (err) {
-          //     console.log(err);
-          //   }
-          // });
-        // return Promise.resolve(this.mangaList);
+          .map((res) => {
+            var body = res.json();
+            return body.data || {};
+          })
+          .catch(function (err) {
+            if (err.status !== 404) {
+              return Rx.Observable.throw(err.statusText || 'Server error');
+            } else {
+              return Rx.Observable.empty();
+            }
+          });
       },
       getManga: function (id) {
         return this.getMangaList().then((list) => {

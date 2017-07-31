@@ -5,7 +5,7 @@
       templateUrl: 'app/components/add-manga/add-manga.component.html'
     })
     .Class({
-      constructor: function() {
+      constructor: function AddMangaComponent() {
         this.newMangaList = [];
       },
       addManga: function(name) {

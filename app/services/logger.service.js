@@ -1,6 +1,6 @@
 (function (app) {
   app.LoggerService = ng.core.Class({
-    constructor: function () {
+    constructor: function LoggerService() {
       this.logs = [];
     },
 

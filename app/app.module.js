@@ -5,7 +5,6 @@
         ng.platformBrowser.BrowserModule,
         ng.forms.FormsModule,
         ng.http.HttpModule,
-        // rxjs.Observable,
         app.AppRoutingModule
       ],
       declarations: [
@@ -22,6 +21,6 @@
       bootstrap: [ app.AppComponent ]
     })
     .Class({
-      constructor: function() {}
+      constructor: function AppModule() {}
     });
 })(window.app || (window.app = {}));

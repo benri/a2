@@ -8,14 +8,17 @@
       templateUrl: 'app/components/dashboard/dashboard.component.html'
     })
     .Class({
-      constructor: [app.MangaService, ng.router.Router, function(mangaService, router) {
-        this.mangaService = mangaService;
-        this.router = router;
-      }],
+      constructor: [app.MangaService, ng.router.Router,
+        function DashboardComponent(mangaService, router) {
+          this.mangaService = mangaService;
+          this.router = router;
+        }],
       ngOnInit: function() {
-        this.mangaService.getMangaList().then((mangaList) => {
-          this.mangaList = mangaList.slice(0, 5);
-        });
+        var list = this.mangaService.getMangaList();
+        console.log(list);
+        // .then((mangaList) => {
+        //   this.mangaList = mangaList.slice(0, 5);
+        // });
       },
       goToDetail: function(manga) {
         var link = ['/manga', manga.id];

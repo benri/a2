@@ -5,13 +5,20 @@
       templateUrl: 'app/components/manga-list/manga-list.component.html'
     })
     .Class({
-      constructor: [app.MangaService, function(mangaService) {
-        this.mangaService = mangaService;
-      }],
+      constructor: [app.MangaService,
+        function MangaListComponent(mangaService) {
+          this.mangaService = mangaService;
+        }],
       ngOnInit: function () {
-        this.mangaService.getMangaList().then((mangaList) => {
-          this.mangaList = mangaList;
-        });
+        this.mangaService.getMangaList()
+          .subscribe((mangaList) => {
+            console.log(mangaList);
+            this.mangaList = mangaList;
+          }, (err) => {
+            console.error(err);
+          }, () => {
+            console.log('mangaList fetch complete.');
+          });
       }
     });
 })(window.app || (window.app = {}));

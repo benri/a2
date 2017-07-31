@@ -1,7 +1,7 @@
 (function (app) {
   app.Manga =
     ng.core.Class({
-      constructor: [Number, String, function(id, name) {
+      constructor: [Number, String, function Manga(id, name) {
         this.id = id;
         this.name = name;
         this.latestChapter = 1;

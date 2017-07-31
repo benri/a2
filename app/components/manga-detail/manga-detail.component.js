@@ -12,7 +12,7 @@
     })
     .Class({
       constructor: [app.MangaService, ng.router.ActivatedRoute, ng.common.Location,
-        function(mangaService, route, location) {
+        function MangaDetailComponent(mangaService, route, location) {
           this.mangaService = mangaService;
           this.route = route;
           this.location = location;

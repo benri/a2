@@ -5,7 +5,7 @@
       templateUrl: 'app/components/app.component.html'
     })
     .Class({
-      constructor: [app.LoggerService, function(logger) {
+      constructor: [app.LoggerService, function AppComponent(logger) {
         this.logger = logger;
 
         this.title = "My Manga Keeper";
